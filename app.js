@@ -5,9 +5,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const app = express();
 app.use(cors());
-const port = 3000;
-main().catch((err) => console.log(err));
 
+main().catch((err) => console.log(err));
 
 async function main() {
   await mongoose.connect(`mongodb+srv://aditya:341025@cluster0.lqk62gs.mongodb.net/loginpage`);
@@ -42,8 +41,4 @@ app.post("/demo", async (req, res) => {
   await newUser.save();
 });
 
-
-
-app.listen(port, () => {
-  console.log("Server is listening...");
-});
+app.listen(); // No need to specify port when deploying to Vercel
