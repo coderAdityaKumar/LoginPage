@@ -30,9 +30,7 @@ app.get("/", (req, res) => {
   app.use(express.static(path.resolve(__dirname, "frontend", "build")));
   res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
 });
-app.get("/demo",(req,res)=>{
-  res.send("Hello world");
-}
+
 app.post("/demo", async (req, res) => {
   let newUser = new user();
   newUser.username = req.body.username;
