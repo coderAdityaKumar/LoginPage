@@ -35,10 +35,7 @@ app.post("/demo", async (req, res) => {
   await newUser.save();
 });
 
-app.get("/", (req, res) => {
-  app.use(express.static(path.resolve(__dirname, "frontend", "build")));
-  res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-});
+
 
 app.listen(port, () => {
   console.log("Server is listening...");
